@@ -4,6 +4,8 @@ function setRange(Boat) {
 
     dropbox.options.length = 0;
 
+    dropbox.options[dropbox.options.length] = new Option(' ', '0');
+
     if (Boat == "1" || Boat == "2") {
 
         dropbox.options[dropbox.options.length] = new Option('Shell', '1');
@@ -15,6 +17,7 @@ function setRange(Boat) {
         dropbox.options[dropbox.options.length] = new Option('Fully fitted', '4');
 
     }
+    setLength();
 }
 
 function setLength() {
@@ -144,5 +147,16 @@ function setLength() {
 
         dropbox.options[dropbox.options.length] = new Option('70ft', '50');
 
+    }
+    setPrice();
+}
+
+function setPrice(){
+
+    if (document.BoatConfigurator.Length.value == "1"){
+        document.getElementById("price").innerHTML = "£162000,00";
+    }
+    if (document.BoatConfigurator.Length.value == "2"){
+        document.getElementById("price").innerHTML = "£168000,00";
     }
 }
